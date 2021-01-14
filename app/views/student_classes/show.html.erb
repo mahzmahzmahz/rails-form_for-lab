@@ -1,2 +1,4 @@
-<h1>StudentClasses#show</h1>
-<p>Find me in app/views/student_classes/show.html.erb</p>
+<h1> Show Details </h1>
+
+  <p>  <%= @student_class_to_show.student.to_s %> ---- Enrolled in: <%= @student_class_to_show.school_class.title %> Enrolled on: <%= @student_class_to_show.created_at.to_s %> </p>
+

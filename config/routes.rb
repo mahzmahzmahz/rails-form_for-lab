@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
 
-  get 'student_classes/index'
+  get '/student_classes', to: 'student_classes#index', as: 'student_classes'
 
-  get 'student_classes/show'
+  get '/student_classes/new', to: 'student_classes#new', as: 'new_student_class'
+  post '/student_classes', to: 'student_classes#create'
 
-  get 'student_classes/edit'
+  get '/student_classes/:id/edit', to: 'student_classes#edit', as: 'edit_student_class'
+  patch '/student_classes/:id', to: 'student_classes#update'
+  
 
-  get 'student_classes/new'
+  get 'student_classes/:id', to: 'student_classes#show', as: 'student_class'
+
+  delete '/student_classes/:id', to: 'student_classes#destroy'
+  
+  ########STUDENTS##########
 
   get '/students', to: 'students#index', as: 'students'
 
@@ -18,7 +25,9 @@ Rails.application.routes.draw do
 
   get '/students/:id', to: 'students#show', as: 'student'
 
-  delete '/students/:id', to: 'students#delete', as: 'delete_student'
+  delete '/students/:id', to: 'students#destroy', as: 'delete_student'
+
+########School Class###########
 
   get '/school_classes', to: 'school_classes#index', as: 'school_classes'
 

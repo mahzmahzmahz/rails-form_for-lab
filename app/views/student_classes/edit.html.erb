@@ -1,2 +1,13 @@
-<h1>StudentClasses#edit</h1>
-<p>Find me in app/views/student_classes/edit.html.erb</p>
+<h1>A Nice Edit Title</h1>
+
+
+<%= form_for @student_class_to_edit do |f| %>
+    
+
+    <%= f.collection_select :student_id, Student.all, :id, :to_s %>
+    <%= f.collection_select :school_class_id, SchoolClass.all, :id, :title %>
+    
+    <%= f.check_box :current, {}, 'true', 'false' %>
+    <%= f.submit "Danny was Right but for Editing this time!" %>
+
+<%end%>

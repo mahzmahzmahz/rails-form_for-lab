@@ -1,5 +1,16 @@
 <h1>Student's Page: <%= @student_to_show.to_s %> </h1>
 
+    <ul>
+
+    <% @student_to_show.student_classes.each do |student_class| %>
+
+        <li>
+            <%= student_class.school_class.title %> 
+            <%= button_to "X", student_class_path(student_class), method: "delete" %>
+        </li>
 
 
+    <%end%>
+    
+    </ul>
 
