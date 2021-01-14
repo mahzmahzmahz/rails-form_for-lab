@@ -1,0 +1,12 @@
+<h1>All Students</h1>
+
+<ul>
+    <% @all_students.each do |student| %>
+    
+        <li>
+            <%= student.to_s %> (<%= link_to "delete student", student_path(student), method: "delete" %>)
+        </li>
+    <%end%>
+</ul>
+
+

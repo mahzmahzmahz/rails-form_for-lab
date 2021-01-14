@@ -1,0 +1,9 @@
+<h1>A Nice Edit Title</h1>
+
+<%= form_for @school_class_to_edit do |f| %>
+    <%= f.label :title, "Course Title"%>
+    <%= f.text_field :title %>
+    <%= f.label :room_number, "Room Number"%>
+    <%= f.number_field :room_number%>
+    <%= f.submit %>
+<%end%>
